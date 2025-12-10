@@ -31,4 +31,9 @@ Imã
 
 
   intergração:
-    A integração é realizada via Serial, onde cada projeto envia já ordenadamente os dados a serem lidos. O código de leitura recebe os dados das diferentes Serial e os atribui automaticamente nos respectivos gráficos.
+   A integração é realizada via Serial, onde cada projeto Arduino envia os dados ordenadamente para um único aplicativo Python (Tkinter/Matplotlib). O software recebe os dados de três portas COM distintas e os atribui automaticamente aos gráficos de duas maneiras diferentes.
+
+Rampa (Bloco de Dados): A função le_dados_rampa() implementa a leitura em bloco (usando os marcadores #LISTA_ULTRASSONICO e #FIM_ULTRASSONICO). O software limpa todo o histórico anterior (hist_tempo.clear()), coleta o novo conjunto completo de pontos, e redesenha o gráfico integralmente. Isso garante que o usuário visualize apenas a linha do último experimento finalizado.
+Guindaste e Eletroímã (Ponto Contínuo): As funções de leitura utilizam a lógica de linha única, onde cada novo ponto lido é anexado (.append()) ao histórico. O gráfico é redesenhado com o novo ponto, fazendo com que a linha cresça progressivamente na tela, mostrando o registro contínuo ao longo do tempo.
+
+O aplicativo Tkinter permite alternar a visualização entre os três experimentos, enquanto a coleta serial continua ativa em segundo plano para todas as portas.
