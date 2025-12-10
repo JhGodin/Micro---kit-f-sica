@@ -30,7 +30,8 @@ Imã
   <img width="999" height="748" alt="image" src="https://github.com/user-attachments/assets/c360e2bb-8647-4789-9248-692b2be2a66f" />
 
 
-  intergração:
+  Intergração:
+  
    A integração é realizada via Serial, onde cada projeto Arduino envia os dados ordenadamente para um único aplicativo Python (Tkinter/Matplotlib). O software recebe os dados de três portas COM distintas e os atribui automaticamente aos gráficos de duas maneiras diferentes.
 
 Rampa (Bloco de Dados): A função le_dados_rampa() implementa a leitura em bloco (usando os marcadores #LISTA_ULTRASSONICO e #FIM_ULTRASSONICO). O software limpa todo o histórico anterior (hist_tempo.clear()), coleta o novo conjunto completo de pontos, e redesenha o gráfico integralmente. Isso garante que o usuário visualize apenas a linha do último experimento finalizado.
